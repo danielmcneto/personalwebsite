@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Daniel Marinho Portifolio</title>
+    <link rel="stylesheet" href="style.css" />
+    <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.5.0/model-viewer.min.js"></script>
+  </head>
+  <body>
+    <nav>
+      <ul>
+        <li><a id="section" href="#About">About</a></li>
+        <li><a id="section" href="#Technologies">Technologies</a></li>
+        <li><a id="section" href="#Projects">Projects</a></li>
+        <li><a id="section" href="#Education">Education</a></li>
+        <li><a id="section" href="#Contact">Contact</a></li>
+      </ul>
+    </nav>
+    
+    <div id="pageContent">
+      
+      <section id="About">
+        <div>
+          <img id="profile" src="src/profile.jpg" alt="Profile Picture" />
+          <h1>16 year-old high-school estudent<br>and tech enthusiast</h1>
+          <p>
+            Hello I’m <img id="name" src="src/image-removebg-preview.png"></img>, from brazil preparing to join “UFPE”, one of the top universities in Brazil, to study computer engineering
+          </p>
+        </div>
+        
+        <model-viewer
+          src="src/cube.glb" 
+          alt="3D Model" 
+          disable-pan
+          auto-rotate-delay="0"
+          orientation="20deg 15deg 0"
+          rotation-per-second="30deg" 
+          auto-rotate="true">
+        </model-viewer>
+      </section>
+    </div>
+
+    <div id="pageContent">
+      <section id="Technologies">
+        <h1>Technologies</h1>
+        <div id="TechText">
+          <p>Core<br> <img class="techStack" src="https://skillicons.dev/icons?i=js,py,css,html" alt=""></p>
+          <p>Familiar with<br> <img class="techStack" src="https://skillicons.dev/icons?i=cpp,cs,github" alt=""></p>
+          <p>Game Engine<br> <img class="techStack" src="https://skillicons.dev/icons?i=unity" alt=""></p>
+          <p>Other<br> <img class="techStack" src="https://skillicons.dev/icons?i=windows,arduino,discord,vscode" alt=""></p> 
+        </div>
+        
+      </section>
+    </div>
+
+    <div id="pageContent">
+      <h1>Projects</h1><br><p> Here are some of my projects</p>
+      <section id="Projects">
+        <div id="project-table">
+          <img class="Project" src="src/thumb miw.png" alt="Project Image">
+          <p1>M.I.W Bot</p1>
+          <p>A bot that queries the Wiki API to retrieve real-time information, quotes, and status updates.</p>
+          <div id="project-table-text">
+            <a href="https://github.com/danielmcneto/MIWbot" target="_blank">Source</a>
+            <a href="https://slack.com/oauth/v2/authorize?client_id=2210535565.11745831017617&scope=assistant:write,commands&user_scope=" target="_blank">Preview</a>
+        </div>
+        </div>
+
+        <div id="project-table">
+          <img class="Project" src="src/AngelFallpng.png" alt="Project Image">
+          <p1>Angel Fall</p1>
+          <p>Built in Unity for Soul Game Jam 1. A 2D pixel art Metroidvania focused on exploration and snappy combat.</p>
+          <div id="project-table-text">
+            <a href="https://ehodan.itch.io/angel-fall" target="_blank">Play</a>
+        </div>
+          
+        </div>
+        
+      </section>
+    </div>
+
+    <div id="pageContent">
+      <section id="Education">
+        <h1>Education</h1>
+        <p>
+          I am currently studying in high school
+        </p>
+        <!--
+        <h1>Awards</h1>
+        <div id="awards">
+          <div id="info">
+            <img src="src/thumb miw.png">
+            <p>jd jdopwo wodo dddddddddd dddd dddddddddddd ddddddddddd dddd dddddd ddddddd dddddddd ddddddd ddddddddd ddddd dddddd ddddd ddjw</p>
+          </div>
+
+          <div id="info">
+            <img src="src/thumb miw.png">
+            <p>jd jdopwo wodo dddddddddd dddd dddddddddddd ddddddddddd dddd dddddd ddddddd dddddddd ddddddd ddddddddd ddddd dddddd ddddd ddjw</p>
+          </div>
+        </div> 
+        -->
+      </section>
+    </div>
+
+    <div id="pageContent">
+      <section id="Contact">
+        <h1>Contact</h1>
+        <p>
+          You can reach me at
+        </p>
+        <a href="https://github.com/danielmcneto"  target="_blank"><img class="social" src="https://skillicons.dev/icons?i=github" alt="GitHub"></a>
+      </section>
+    </div>
+
+  </body>
+</html>
