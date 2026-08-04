@@ -2,6 +2,7 @@
 My personal website and portfolio.
 
 <!-- Aqui você pode colocar um GIF ou imagem do site depois! 📸 -->
+![Preview Image](assets/preview.png)
 
 ## 🎯 Why?
 I created this page to practice and learn more about Web Development, HTML, and CSS.
