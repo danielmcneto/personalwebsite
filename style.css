@@ -4,16 +4,97 @@
 
 html {
     scroll-behavior: smooth;
+    transition: filter 0.5s ease; /* A transição vem pra cá */
 }
 
 body {
+    position: relative; /* PRECISA disso pro bg-animado saber o tamanho do site */
     margin: 0;
     background-color: rgb(18, 19, 20);
     color: rgb(238, 238, 238);
     font-family: monospace;
+    /* Deixa o fundo pontilhado SÓ AQUI no body */
     background-image: radial-gradient(white 1px, rgb(18, 19, 20) 1px);
     background-size: 45px 45px;
     overflow-x: hidden;
+    /* A transição agora é só pro filter, limpei o background-color daqui */
+    transition: filter 0.5s ease;
+}
+
+.bg-animado {
+  position: absolute; /* Agora ele desce junto com o scroll */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%; /* Estica pra cobrir o site todo, não só a primeira tela */
+    z-index: -1;
+    overflow: hidden;
+}
+
+@keyframes girar {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.imagem-giratoria{
+    position:absolute;
+    animation: girar 230s linear infinite;
+}
+
+.estrela-1 {
+  width: 400px;
+  top: 5%;
+  left: -5%;
+}
+
+.estrela-2 {
+  width: 400px;
+  top: 30%;
+  left: 80%;
+  animation-duration: 45s; /* Faz essa girar mais devagar pra dar contraste */
+  animation-direction: reverse; /* Faz ela girar pro outro lado (anti-horário) */
+}
+
+.swag {
+  position: absolute;
+  left: 50%;
+  top: 66%;
+  transform: translateX(-50%);
+  width: 400px;
+  max-width: 80vw;
+}
+
+.botao-estiloso{
+    position: fixed;
+    top:90%;
+    left: 90%;
+    font-family: monospace; /* Fonte com carinha de código */
+    z-index: 10;
+    background: transparent;
+    color: whitesmoke;
+    border: none;
+    font-family: monospace; /* Fonte com carinha de código */
+    cursor: pointer;
+}
+
+html.modo-claro {
+    filter: invert(1);
+}
+
+body {
+  transition: filter 0.5s ease, background-color 0.5s ease;
+}
+
+/* UM AVISO IMPORTANTE:
+   O invert() afeta TUDO. Se tu botar as fotos coloridas do teu jogo 
+   Angel Fall ou o teu ícone do GitHub, eles vão ficar parecendo um raio-X.
+   Pra evitar isso, a gente "des-inverte" as imagens normais: */
+.modo-claro img:not(.imagem-giratoria):not(.swag) {
+  filter: invert(1);
 }
 
 img {
@@ -43,6 +124,8 @@ ul {
     width: 60%;
     z-index: 1000; /* Garante que a barra fique POR CIMA de todo o resto */
 }
+
+
 
 ul a {
     margin-left: 10%;
@@ -85,6 +168,8 @@ a:hover {
     padding-left: 20%;
     padding-right: 20%;
 }
+
+
 
 #info img {
     border-radius: 10%;
@@ -155,6 +240,8 @@ p1 {
     gap: 24px;
     width: min(1200px, 100%);
 }
+
+
 
 #About #profile {
     width: 200px;
