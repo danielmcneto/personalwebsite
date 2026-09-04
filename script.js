@@ -1,5 +1,5 @@
-const botaoInvert = document.getElementById('btn-invert')
+const invertButton = document.getElementById('btn-invert')
 
-botaoInvert.addEventListener('click', () =>{
-    document.documentElement.classList.toggle('modo-claro');
+invertButton.addEventListener('click', () => {
+    document.documentElement.classList.toggle('light-mode');
 })

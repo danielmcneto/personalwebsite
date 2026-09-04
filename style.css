@@ -4,34 +4,34 @@
 
 html {
     scroll-behavior: smooth;
-    transition: filter 0.5s ease; /* A transição vem pra cá */
+    transition: filter 0.5s ease; 
 }
 
 body {
-    position: relative; /* PRECISA disso pro bg-animado saber o tamanho do site */
+    position: relative;
     margin: 0;
     background-color: rgb(18, 19, 20);
     color: rgb(238, 238, 238);
     font-family: monospace;
-    /* Deixa o fundo pontilhado SÓ AQUI no body */
+
     background-image: radial-gradient(white 1px, rgb(18, 19, 20) 1px);
     background-size: 45px 45px;
     overflow-x: hidden;
-    /* A transição agora é só pro filter, limpei o background-color daqui */
+
     transition: filter 0.5s ease;
 }
 
-.bg-animado {
-  position: absolute; /* Agora ele desce junto com o scroll */
+.animated-background {
+  position: absolute;
     top: 0;
     left: 0;
     width: 100%;
-    height: 100%; /* Estica pra cobrir o site todo, não só a primeira tela */
+    height: 100%; 
     z-index: -1;
     overflow: hidden;
 }
 
-@keyframes girar {
+@keyframes rotate {
   from {
     transform: rotate(0deg);
   }
@@ -40,48 +40,80 @@ body {
   }
 }
 
-.imagem-giratoria{
+.rotating-image {
     position:absolute;
-    animation: girar 230s linear infinite;
+    animation: rotate 230s linear infinite;
 }
 
-.estrela-1 {
+.star-1 {
   width: 400px;
   top: 5%;
   left: -5%;
 }
 
-.estrela-2 {
+.star-2 {
   width: 400px;
   top: 30%;
   left: 80%;
-  animation-duration: 45s; /* Faz essa girar mais devagar pra dar contraste */
-  animation-direction: reverse; /* Faz ela girar pro outro lado (anti-horário) */
+  animation-duration: 45s; 
+  animation-direction: reverse; 
 }
 
-.swag {
+.star-3 {
+  width: 350px;
+  top: 50%;
+  left: -10%;
+  animation-duration: 25s; 
+}
+
+.star-4 {
+  width: 350px;
+  top: 65%;
+  left: 80%;
+  animation-duration: 55s; 
+  animation-direction: reverse; 
+}
+
+.star-5 {
+  width: 350px;
+  top: 80%;
+  left: -10%;
+  animation-duration: 35s; 
+}
+
+.swag-1 {
   position: absolute;
+  filter:opacity(0.5);
   left: 50%;
-  top: 66%;
+  top: 45%;
   transform: translateX(-50%);
   width: 400px;
   max-width: 80vw;
 }
 
-.botao-estiloso{
+.swag-2 {
+  position: absolute;
+  filter:opacity(0.5);
+  left: 50%;
+  top: 78%;
+  transform: translateX(-50%);
+  width: 400px;
+  max-width: 80vw;
+}
+
+.style-button{
     position: fixed;
     top:90%;
     left: 90%;
-    font-family: monospace; /* Fonte com carinha de código */
+    font-family: monospace;
     z-index: 10;
     background: transparent;
     color: whitesmoke;
     border: none;
-    font-family: monospace; /* Fonte com carinha de código */
     cursor: pointer;
 }
 
-html.modo-claro {
+html.light-mode {
     filter: invert(1);
 }
 
@@ -89,11 +121,8 @@ body {
   transition: filter 0.5s ease, background-color 0.5s ease;
 }
 
-/* UM AVISO IMPORTANTE:
-   O invert() afeta TUDO. Se tu botar as fotos coloridas do teu jogo 
-   Angel Fall ou o teu ícone do GitHub, eles vão ficar parecendo um raio-X.
-   Pra evitar isso, a gente "des-inverte" as imagens normais: */
-.modo-claro img:not(.imagem-giratoria):not(.swag) {
+
+.light-mode img:not(.rotating-image):not(.swag):not(#name) {
   filter: invert(1);
 }
 
@@ -122,7 +151,7 @@ ul {
     position: fixed;
     top: 0;
     width: 60%;
-    z-index: 1000; /* Garante que a barra fique POR CIMA de todo o resto */
+    z-index: 1000;
 }
 
 
@@ -137,7 +166,7 @@ a {
     display: inline-block;
     transition: all 0.2s ease-in-out;
     transform: scale(100%) translateY(0px);
-    color: rgb(185, 185, 185);
+    color: rgb(203, 204, 204);
 }
 
 a:hover {
@@ -177,34 +206,114 @@ a:hover {
     max-width: 384px;
 }
 
-#awards {
+.timeline {
+    position: relative;
+    max-width: 1200px;
+    margin: 40px auto;
+}
+
+
+.timeline-line {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    width: 4px;
+    background-color: #fff;
+    transform: translateX(-50%);
+}
+
+
+.timeline-item {
+    position: relative;
+    width: 50%;
+   
+    padding: 10px 40px; 
+    box-sizing: border-box;
+}
+
+
+.timeline-item:nth-child(odd) {
+    left: 0;
+    text-align: right; /
+}
+
+
+.timeline-item:nth-child(even) {
+    left: 50%;
+    text-align: left; 
+}
+
+
+.timeline-dot {
+    position: absolute;
+    top: 50%;
+    width: 16px;
+    height: 16px;
+    background-color: #007acc;
+    border: 3px solid #fff;
+    border-radius: 50%;
+    z-index: 1;
+}
+
+
+.timeline-item:nth-child(odd) .timeline-dot {
+    right: -8px;
+}
+
+
+.timeline-item:nth-child(even) .timeline-dot {
+    left: -8px;
+}
+
+
+.award-card {
+    position: relative;
+    background-color: rgba(57, 62, 70, 0.4);
+    backdrop-filter: blur(3px);
+    width: min(100%, 300px);
+    max-width: fit-content;
+    min-height: 300px;
+    height: auto;
+    padding: 16px 2% 60px;
+    border-radius: 14px;
+    color: #fff;
     display: flex;
-    flex-direction: row;
-    justify-content: center;
-    gap: 20px;
-    padding-left: 20%;
-    padding-right: 20%;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    text-align: left;
 }
 
-#awards img {
-    border-radius: 10%;
-    max-height: 216px;
-    max-width: 384px;
+.award-card img.Award {
+    display: block;
+    aspect-ratio: 16/9;
+    object-fit: cover;
+    filter: grayscale(100%);
+    max-width: 200px;
+    border-radius: 8px;
+    margin: 0 auto;
 }
 
-#awards:nth-child(even) {
+.award-card h3 {
+    text-align: left;
+    margin: 8px 0;
+    font-size: 20px;
+}
+
+.award-card-text {
+    position: absolute;
+    left: 0;
+    bottom: 4px;
     display: flex;
-    flex-direction: row-reverse;
     justify-content: center;
-    gap: 20px;
-    padding-left: 20%;
-    padding-right: 20%;
+    width: 100%;
 }
 
-#awards:nth-child(even) img {
-    border-radius: 10%;
-    max-height: 216px;
-    max-width: 384px;
+.award-card a {
+    display: inline-block;
+    width: auto;
+    margin-top: 5%;
 }
 
 p1 {
@@ -295,7 +404,7 @@ p1 {
 
 #project-table {
     background-color: rgba(57, 62, 70, 0.4);
-    backdrop-filter: blur(2px);
+    backdrop-filter: blur(3px);
     height: 300px;
     width: min(100%, 300px);
     padding: 2%;
@@ -395,6 +504,18 @@ p {
     #Projects {
         flex-direction: column;
         align-items: center;
+    }
+
+    .award-card {
+        width: 100%;
+    }
+
+    .timeline-item:nth-of-type(odd) {
+        left: 0;
+    }
+
+    .timeline-line {
+        display: none;
     }
 
     #project-table {

@@ -3,22 +3,27 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Daniel Marinho Portifolio</title>
+    <title>Daniel Marinho Portfolio</title>
     <link rel="stylesheet" href="style.css" />
     <script type="module" src="script.js"></script>
     <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.5.0/model-viewer.min.js"></script>
   </head>
   <body>
-    <div class="bg-animado">
-      <img src="src/star-a.png"  alt="" class="imagem-giratoria estrela-1"/>
-      <img src="src/star-a.png"  alt="" class="imagem-giratoria estrela-2"/>
-      <img src="src/swag.png"  alt="" class="swag"/>
+    <div class="animated-background">
+      <img src="src/star-a.png" alt="" class="rotating-image star-1" />
+      <img src="src/star-a.png" alt="" class="rotating-image star-2" />
+      <img src="src/star-a.png" alt="" class="rotating-image star-3" />
+      <img src="src/star-a.png" alt="" class="rotating-image star-4" />
+      <img src="src/star-a.png" alt="" class="rotating-image star-5" />
+      <img src="src/swag.png"  alt="" class="swag-1"/>
+      <img src="src/swag.png"  alt="" class="swag-2"/>
     </div>
     <nav>
       <ul>
         <li><a id="section" href="#About">About</a></li>
         <li><a id="section" href="#Technologies">Technologies</a></li>
         <li><a id="section" href="#Projects">Projects</a></li>
+        <li><a id="section" href="#Awards">Awards</a></li>
         <li><a id="section" href="#Education">Education</a></li>
         <li><a id="section" href="#Contact">Contact</a></li>
       </ul>
@@ -29,9 +34,9 @@
       <section id="About">
         <div>
           <img id="profile" src="src/profile.jpg" alt="Profile Picture" />
-          <h1>16 year-old high-school estudent<br>and tech enthusiast</h1>
+          <h1>16-year-old high school student<br />and tech enthusiast</h1>
           <p>
-            Hello I’m <img id="name" src="src/image-removebg-preview.png"></img>, from brazil preparing to join “UFPE”, one of the top universities in Brazil, to study computer engineering
+            Hello, I’m <img id="name" src="src/name.png" alt="Daniel Marinho" />, based in Brazil. I am preparing to study computer engineering at UFPE while building software and hardware projects.
           </p>
         </div>
         
@@ -64,9 +69,9 @@
       <h1>Projects</h1><br><p> Here are some of my projects</p>
       <section id="Projects">
         <div id="project-table">
-          <img class="Project" src="src/5secpanic.png" alt="Project Image">
+          <img class="Project" src="src/projects/5secpanic.png" alt="Project Image">
           <p1>5-Second Panic</p1>
-          <p>A fast-paced Arcade game built with Godot where players must try win as much microgames as they can.</p>
+          <p>A fast-paced arcade game built with Godot where players try to win as many microgames as possible.</p>
           <div id="project-table-text">
             <a href="https://github.com/danielmcneto/WarioWareGame" target="_blank">Source</a>
             <a href="https://ehodan.itch.io/5-second-panic" target="_blank">Play</a>
@@ -74,15 +79,109 @@
         </div>
 
         <div id="project-table">
-          <img class="Project" src="src/AngelFall.png" alt="Project Image">
+          <img class="Project" src="src/projects/AngelFall.png" alt="Project Image">
           <p1>Angel Fall</p1>
-          <p>Built in Unity for Soul Game Jam 1. A 2D pixel art Metroidvania focused on exploration and snappy combat.</p>
+          <p>Built in Unity for Soul Game Jam 1, this 2D pixel-art Metroidvania focuses on exploration and snappy combat.</p>
           <div id="project-table-text">
             <a href="https://ehodan.itch.io/angel-fall" target="_blank">Play</a>
+          </div>
+        </div>
+
+        <div id="project-table">
+          <img class="Project" src="src/projects/LifeSimulation.png" alt="Project Image">
+          <p1>Life Simulation</p1>
+          <p>A simple ecosystem simulator with silly little creatures built with Godot.</p>
+          <div id="project-table-text">
+            <a href="https://github.com/danielmcneto/life-simulation" target="_blank">Source</a>
+            <a href="https://ehodan.itch.io/zezzit-simulation" target="_blank">Play</a>
         </div>
           
         </div>
         
+      </section>
+    </div>
+
+    <div id="pageContent">
+      <h1>Achievements & Awards</h1><br><p> Here are some of my achievements and awards</p>
+      <section id="Awards">
+        <div class="timeline">
+          <div class="timeline-line"></div>
+
+
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+          
+            <div class="award-card"> 
+              <!-- <img class="Award" src="src/awards/obr.png" alt="Award Image"> -->
+              <h3>Solar-Powered Backup Energy Concept</h3>
+              <p>An award-winning science fair concept created in middle school, titled "Solar Power for Continuous Subway Operation." I designed a scale model using concentrated solar lenses to heat a backup steam boiler and charge emergency batteries that would power subways during grid outages.<br /><br />Fenecit 2022: 2nd place<br />Expoceti 2022: 3rd place</p>
+              <div class="award-card-text">
+                <!-- <a href="MNR.com" target="_blank">Source</a> -->
+              </div>
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="award-card">
+              <!-- <img class="Award" src="src/awards/obr.png" alt="Award Image"> -->
+              <h3>Top 15 - FIRST LEGO League State/Regional Championship 2023</h3>
+              <p>Secured a Top 15 spot in the regional tournament (a qualifier for Nationals). Worked closely with the team to program and adapt an EV3 system, successfully solving complex arena missions under tight time constraints.</p>
+              <div class="award-card-text">
+                <!-- <a href="FLL.com" target="_blank">Source</a> -->
+              </div>
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="award-card">
+              <!-- <img class="Award" src="src/awards/obr.png" alt="Award Image"> -->
+              <h3>4th Place (Regional Level) - Brazilian Robotics Olympiad (OBR) 2024</h3>
+              <p>Reached 4th place in the municipal/regional stage competing in the public school category with an autonomous rescue robot, qualifying for the State Championship.</p>
+              <div class="award-card-text">
+                <!-- <a href="OBR.com" target="_blank">Source</a> -->
+              </div>
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="award-card">
+              <img class="Award" src="src/awards/2024 state.jpeg" alt="Award Image">
+              <h3>State Champion and National Finalist - Brazilian Robotics Olympiad (OBR) 2024</h3>
+              <p>Secured 1st place at the state level, advancing to the national finals. Worked on the design and implementation of an autonomous rescue robot for the competition.</p>
+              <div class="award-card-text">
+                <a href="https://www.instagram.com/educarecifeplay/reel/DCkcrRUx2lM/" target="_blank">Source</a>
+              </div>
+            </div>
+          </div>
+          
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="award-card">
+              <img class="Award" src="src/awards/rnm.jpeg" alt="Award Image">
+              <h3>Top 100 Merit-Based Academic Exchange Program in Canada 2025</h3>
+              <p>Selected among the top 100 public school students in Recife (out of 1,000 top-performing applicants) through a competitive selection exam. Awarded a full scholarship for a 2025 academic exchange program at Brock University (St. Catharines, Canada) organized by Recife no Mundo.</p>
+              <div class="award-card-text">
+                <a href="https://www.instagram.com/educacaorecife.oficial/p/DLkhRGGOhMc/" target="_blank">Source</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="award-card">
+              <img class="Award" src="src/awards/2026 regional.jpeg" alt="Award Image">
+              <h3>Regional Champion - Brazilian Robotics Olympiad (OBR) 2026</h3>
+              <p>Developed the code and electronic layout for an autonomous rescue robot, securing a top position in the regional stage through precise line-following and obstacle navigation in just 3 days.</p>
+              <div class="award-card-text">
+                <a href="https://www.instagram.com/p/DcewHKwmXdu/?img_index=17" target="_blank">Source</a>
+              </div>
+            </div>
+          </div>
+
+        </div>
       </section>
     </div>
 
@@ -92,20 +191,6 @@
         <p>
           I am currently studying in high school
         </p>
-        <!--
-        <h1>Awards</h1>
-        <div id="awards">
-          <div id="info">
-            <img src="src/thumb miw.png">
-            <p>jd jdopwo wodo dddddddddd dddd dddddddddddd ddddddddddd dddd dddddd ddddddd dddddddd ddddddd ddddddddd ddddd dddddd ddddd ddjw</p>
-          </div>
-
-          <div id="info">
-            <img src="src/thumb miw.png">
-            <p>jd jdopwo wodo dddddddddd dddd dddddddddddd ddddddddddd dddd dddddd ddddddd dddddddd ddddddd ddddddddd ddddd dddddd ddddd ddjw</p>
-          </div>
-        </div> 
-        -->
       </section>
     </div>
 
@@ -116,8 +201,9 @@
           You can reach me at
         </p>
         <a href="https://github.com/danielmcneto"  target="_blank"><img class="social" src="https://skillicons.dev/icons?i=github" alt="GitHub"></a>
+        <a href="mailto:daniel.marinho.dev@gmail.com?" target="_blank"><img class="social" src="https://skillicons.dev/icons?i=gmail" alt="Email"></a>
       </section>
     </div>
-    <button id="btn-invert" class="botao-estiloso">invert</button>
+    <button id="btn-invert" class="style-button">Invert colors</button>
   </body>
 </html>

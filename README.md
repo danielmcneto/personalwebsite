@@ -1,7 +1,7 @@
 # Dan's Personal Website
 My personal website and portfolio.
 
-<!-- Aqui você pode colocar um GIF ou imagem do site depois! 📸 -->
+<!-- A GIF or screenshot of the site can be added here later. -->
 ![Preview Image](assets/preview.png)
 
 ## 🎯 Why?
