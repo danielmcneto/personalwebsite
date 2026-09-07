@@ -10,11 +10,10 @@ html {
 body {
     position: relative;
     margin: 0;
-    background-color: rgb(18, 19, 20);
     color: rgb(238, 238, 238);
     font-family: monospace;
 
-    background-image: radial-gradient(white 1px, rgb(18, 19, 20) 1px);
+    background-image: radial-gradient(white 1px, rgb(0, 0, 0) 1px);
     background-size: 45px 45px;
     overflow-x: hidden;
 
@@ -122,7 +121,7 @@ body {
 }
 
 
-.light-mode img:not(.rotating-image):not(.swag-1):not(.swag-2):not(#name) {
+.light-mode img:not(.rotating-image):not(.swag-1):not(.swag-2):not(#name):not(#profile){
   filter: invert(1);
 }
 
@@ -142,7 +141,7 @@ ul {
     color: rgb(238, 238, 238);
     justify-content: center;
     list-style-type: none;
-    background-color: rgba(57, 62, 70, 0.4);
+    background-color: rgba(66, 72, 80, 0.336);
     backdrop-filter: blur(2px);
     border-radius: 10px;
     margin-left: 20%;
@@ -269,7 +268,7 @@ a:hover {
 
 .award-card {
     position: relative;
-    background-color: rgba(57, 62, 70, 0.4);
+    background-color: rgba(66, 72, 80, 0.336);
     backdrop-filter: blur(3px);
     width: min(100%, 300px);
     max-width: fit-content;
@@ -301,6 +300,12 @@ a:hover {
     font-size: 20px;
 }
 
+.working {
+    margin-left: 19%;
+    margin-top: 25%;
+    font-size: 100px;
+}
+
 .award-card-text {
     position: absolute;
     left: 0;
@@ -329,7 +334,7 @@ p1 {
     display: flex;
     flex-direction: column;
     width: 100%;
-    padding: 0 16px;
+    padding: 90px 16px 0;
 }
 
 #name {
@@ -369,6 +374,13 @@ p1 {
     display: flex;
     flex-direction: column;
     width: min(1200px, 100%);
+    margin-top: 200px;
+}
+
+.tech-intro {
+    margin-top: 100%;
+    flex-basis: 100%;
+    text-align: center;
 }
 
 #TechText {
@@ -376,7 +388,6 @@ p1 {
     justify-content: center;
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
-    margin-top: 100px;
     row-gap: 100px;
     column-gap: 100px;
 }
@@ -385,13 +396,50 @@ p1 {
     margin-top: 10px;
 }
 
+.portfolio-filter-nav {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 30px;
+}
+
+.filter-tab {
+  background: rgba(66, 72, 80, 0.336);
+  backdrop-filter: blur(4px);
+  color: #aaa;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 8px 20px;
+  border-radius: 20px;
+  font-family: monospace;
+  text-decoration: none;
+  font-size: 16px;
+  transition: all 0.2s ease-in-out;
+}
+
+.filter-tab:hover {
+  color: #fff;
+  border-color: #007acc;
+  transform: translateY(-2px);
+}
+
+.filter-tab.active {
+  background: #007acc;
+  color: #fff;
+  border-color: #007acc;
+}
+
 #Projects {
     display: flex;
     flex-direction: row;
     gap: 20px;
     justify-content: center;
     flex-wrap: wrap;
-    width: min(1200px, 100%);
+}
+
+.project-intro {
+    margin-top: 30%;
+    flex-basis: 100%;
+    text-align: center;
 }
 
 #Projects img {
@@ -403,9 +451,9 @@ p1 {
 }
 
 #project-table {
-    background-color: rgba(57, 62, 70, 0.4);
+    background-color: rgba(66, 72, 80, 0.336);
     backdrop-filter: blur(3px);
-    height: 300px;
+    height: 350px;
     width: min(100%, 300px);
     padding: 2%;
     border-radius: 14px;
@@ -443,6 +491,7 @@ section {
     font-size: 30px;
     margin-top: 20px;
     margin-bottom: 20px;
+    scroll-margin-top: 70px;
 }
 
 h1 {
@@ -453,20 +502,27 @@ p {
     font-size: 20px;
 }
 
+footer.glass-footer {
+    align-items: center;
+    display: flex;
+    align-self: center;
+    flex-direction: column;
+}
+
 @media (max-width: 768px) {
     body {
         font-size: 16px;
     }
 
-    ul {
-        margin-left: 20%;
-        margin-right: 50%;
-        margin-top: 1%;
-        padding: 12px 10px;
-        gap: 10px 16px;
+    nav ul {
+        width: calc(100% - 24px);
+        margin: 8px 12px 0;
+        padding: 10px 8px;
+        gap: 8px 14px;
+        border-radius: 8px;
     }
 
-    ul a {
+    nav ul a {
         margin: 0;
     }
 
@@ -489,9 +545,11 @@ p {
     }
 
     model-viewer {
-        width: 420px;
-        height: 420px;
-        margin-left: 15%;
+        display: none;
+    }
+
+    .star-1 {
+        display: none;
     }
 
     #TechText {
@@ -506,8 +564,47 @@ p {
         align-items: center;
     }
 
+    #Awards {
+        margin-top: 80px;
+        flex-direction: column;
+        align-items: center;
+    }
+
     .award-card {
         width: 100%;
+    }
+
+    .award-intro {
+        margin-top: 50%;
+    }
+
+    .timeline {
+        width: 100%;
+        margin: 24px auto;
+    }
+
+    .timeline-item,
+    .timeline-item:nth-child(even),
+    .timeline-item:nth-child(odd) {
+        left: 0;
+        width: 100%;
+        padding: 10px 0;
+        text-align: left;
+    }
+
+    .timeline-item .timeline-dot,
+    .timeline-item:nth-child(even) .timeline-dot,
+    .timeline-item:nth-child(odd) .timeline-dot {
+        display: none;
+    }
+
+    .award-card {
+        min-height: 0;
+        padding: 16px 16px 52px;
+    }
+
+    .award-card h3 {
+        font-size: 18px;
     }
 
     .timeline-item:nth-of-type(odd) {
@@ -541,6 +638,7 @@ p {
 @media (max-width: 480px) {
     nav ul {
         font-size: 14px;
+        gap: 7px 10px;
     }
 
     #About h1 {
@@ -550,5 +648,13 @@ p {
 
     #project-table-text a {
         font-size: 16px;
+    }
+
+    .style-button {
+        top: auto;
+        right: 12px;
+        bottom: 12px;
+        left: auto;
+        font-size: 12px;
     }
 }
