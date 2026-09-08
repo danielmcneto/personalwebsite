@@ -4,19 +4,20 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Daniel Marinho Portfolio</title>
+    <link rel="preconnect" href="https://skillicons.dev" />
     <link rel="stylesheet" href="style.css" />
-    <script type="module" src="script.js"></script>
+    <script type="module" src="script.js" defer></script>
     <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.5.0/model-viewer.min.js"></script>
   </head>
   <body>
     <div class="animated-background">
-      <img src="src/star-a.webp" alt="" class="rotating-image star-1" />
-      <img src="src/star-a.webp" alt="" class="rotating-image star-2" />
-      <img src="src/star-a.webp" alt="" class="rotating-image star-3" />
-      <img src="src/star-a.webp" alt="" class="rotating-image star-4" />
-      <img src="src/star-a.webp" alt="" class="rotating-image star-5" />
-      <img src="src/swag.webp"  alt="" class="swag-1"/>
-      <img src="src/swag.webp"  alt="" class="swag-2"/>
+      <img src="src/star-a.webp" loading="lazy" alt="" class="rotating-image star-1" />
+      <img src="src/star-a.webp" loading="lazy" alt="" class="rotating-image star-2" />
+      <img src="src/star-a.webp" loading="lazy" alt="" class="rotating-image star-3" />
+      <img src="src/star-a.webp" loading="lazy" alt="" class="rotating-image star-4" />
+      <img src="src/star-a.webp" loading="lazy" alt="" class="rotating-image star-5" />
+      <img src="src/swag.webp" loading="lazy"  alt="" class="swag-1"/>
+      <img src="src/swag.webp" loading="lazy"  alt="" class="swag-2"/>
     </div>
     <nav>
       <ul>
@@ -35,16 +36,17 @@
 
       <section id="About">
         <div>
-          <img id="profile" src="src/profile.webp" alt="Profile Picture" />
+          <img id="profile" src="src/profile.webp" width="200" height="200" fetchpriority="high" alt="Profile Picture" />
           <h1>16-year-old high school student<br />and tech enthusiast</h1>
           <p>
-            Hello, I’m <img id="name" src="src/name.webp" alt="Daniel Marinho" />, based in Brazil. I am preparing to study computer engineering at UFPE while building software and hardware projects.
+            Hello, I’m <img id="name" src="src/name.webp" loading="lazy" alt="Daniel Marinho" />, based in Brazil. I am preparing to study computer engineering at UFPE while building software and hardware projects.
           </p>
         </div>
         
         <model-viewer
           src="src/d20.glb" 
           alt="3D Model" 
+          loading="lazy"
           disable-pan
           auto-rotate-delay="0"
           orientation="90deg 5deg 0"
@@ -60,10 +62,10 @@
           <h1>Technologies</h1>
         </div>
         <div id="TechText">
-          <p>Core<br> <img class="techStack" src="https://skillicons.dev/icons?i=py,js,css,html" alt=""></p>
-          <p>Familiar with<br> <img class="techStack" src="https://skillicons.dev/icons?i=cpp,cs" alt=""></p>
-          <p>Game Engine<br> <img class="techStack" src="https://skillicons.dev/icons?i=unity,godot" alt=""></p>
-          <p>Other<br> <img class="techStack" src="https://skillicons.dev/icons?i=arduino,github" alt=""></p> 
+          <p>Core<br> <img class="techStack" loading="lazy" src="https://skillicons.dev/icons?i=py,js,css,html" alt=""></p>
+          <p>Familiar with<br> <img class="techStack" loading="lazy" src="https://skillicons.dev/icons?i=cpp,cs" alt=""></p>
+          <p>Game Engine<br> <img class="techStack" loading="lazy" src="https://skillicons.dev/icons?i=unity,godot" alt=""></p>
+          <p>Other<br> <img class="techStack" loading="lazy" src="https://skillicons.dev/icons?i=arduino,github" alt=""></p> 
         </div>
         
       </section>
@@ -75,8 +77,8 @@
         <div class="project-intro">
           <h1>Choose Your Portfolio</h1>
           <div class="portfolio-filter-nav">
-            <a href="pages/software.html" class="filter-tab"><img src="src/projects/software.webp" alt="Software"><br>Software</a>
-            <a href="pages/hardware.html" class="filter-tab"><img src="src/projects/hardware.webp" alt="Hardware"><br>Hardware</a>
+            <a href="pages/software.html" class="filter-tab"><img src="src/projects/software.webp" loading="lazy" alt="Software"><br>Software</a>
+            <a href="pages/hardware.html" class="filter-tab"><img src="src/projects/hardware.webp" loading="lazy" alt="Hardware"><br>Hardware</a>
           </div>
         </div>
       </section>
@@ -131,7 +133,7 @@
           <div class="timeline-item">
             <div class="timeline-dot"></div>
             <div class="award-card">
-              <img class="Award" src="src/awards/2024 state.webp" alt="Award Image">
+              <img class="Award" src="src/awards/2024 state.webp" loading="lazy" alt="Award Image">
               <h3>State Champion and National Finalist - Brazilian Robotics Olympiad (OBR) 2024</h3>
               <p>Secured 1st place at the state level, advancing to the national finals. Worked on the design and implementation of an autonomous rescue robot for the competition.</p>
               <div class="award-card-text">
@@ -143,7 +145,7 @@
           <div class="timeline-item">
             <div class="timeline-dot"></div>
             <div class="award-card">
-              <img class="Award" src="src/awards/rnm.webp" alt="Award Image">
+              <img class="Award" src="src/awards/rnm.webp" loading="lazy"alt="Award Image">
               <h3>Top 100 Merit-Based Academic Exchange Program in Canada 2025</h3>
               <p>Selected among the top 100 public school students in Recife (out of 1,000 top-performing applicants) through a competitive selection exam. Awarded a full scholarship for a 2025 academic exchange program at Brock University (St. Catharines, Canada) organized by Recife no Mundo.</p>
               <div class="award-card-text">
@@ -155,11 +157,11 @@
           <div class="timeline-item">
             <div class="timeline-dot"></div>
             <div class="award-card">
-              <img class="Award" src="src/awards/2026 regional.webp" alt="Award Image">
+              <img class="Award" src="src/awards/2026 regional.webp" loading="lazy" alt="Award Image">
               <h3>Regional Champion - Brazilian Robotics Olympiad (OBR) 2026</h3>
               <p>Developed the code and electronic layout for an autonomous rescue robot, securing a top position in the regional stage through precise line-following and obstacle navigation in just 3 days.</p>
               <div class="award-card-text">
-                <a href="https://www.instagram.com/p/DcewHKwmXdu/?img_index=17" target="_blank">Source</a>
+                <a href="https://www.instagram.com/p/DcewHKwmXdu/?img_index=17" loading="lazy"target="_blank">Source</a>
               </div>
             </div>
           </div>
@@ -179,8 +181,8 @@
       <footer class="glass-footer">
         <h2>Let's build something crazy.</h2>
         <div class="footer-links">
-          <a href="https://github.com/danielmcneto" target="_blank"><img class="social" src="https://skillicons.dev/icons?i=github" alt="GitHub"></a>
-          <a href="mailto:daniel.marinho.dev@gmail.com?"><img class="social" src="https://skillicons.dev/icons?i=gmail" alt="Email"></a>
+          <a href="https://github.com/danielmcneto" target="_blank"><img class="social" src="https://skillicons.dev/icons?i=github" loading="lazy" alt="GitHub"></a>
+          <a href="mailto:daniel.marinho.dev@gmail.com?"><img class="social" src="https://skillicons.dev/icons?i=gmail" loading="lazy" alt="Email"></a>
         </div>
     </div>
     <p>© 2026 Daniel Marinho</p>

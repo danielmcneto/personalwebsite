@@ -1,16 +1,19 @@
 const invertButton = document.getElementById('btn-invert')
 
-invertButton.addEventListener('click', () => {
+invertButton?.addEventListener('click', () => {
     document.documentElement.classList.toggle('light-mode');
 })
 
 async function getCurrentMusic() {
-    const discord_id = "836178992817504346"; // Replace with your Discord user ID
+    const discord_id = "836178992817504346";
+    const textStatus = document.getElementById('spotify-text');
+    const imageStatus = document.getElementById('spotify-image');
+
+    if (!textStatus || !imageStatus) return;
+
     try{
         const res = await fetch(`https://api.lanyard.rest/v1/users/${discord_id}`);
         const {data} = await res.json();
-        const textStatus = document.getElementById('spotify-text');
-        const imageStatus = document.getElementById('spotify-image');
 
         if(data.listening_to_spotify){
             const spotifyData = data.spotify;
@@ -34,5 +37,5 @@ async function getCurrentMusic() {
     
 }
 
-setInterval(getCurrentMusic, 10000);
+setInterval(getCurrentMusic, 30000);
 getCurrentMusic();
