@@ -4,6 +4,18 @@ invertButton?.addEventListener('click', () => {
     document.documentElement.classList.toggle('light-mode');
 })
 
+function time(){
+    const now = new Date()
+
+    const timeZone = now.toLocaleTimeString('pt-BR', {
+        timeZone: 'America/Sao_Paulo',
+        hour: '2-digit',
+        minute:'2-digit'
+    })
+
+    document.getElementById('clock').innerText = timeZone;
+}
+
 async function getCurrentMusic() {
     const discord_id = "836178992817504346";
     const textStatus = document.getElementById('spotify-text');
@@ -39,3 +51,7 @@ async function getCurrentMusic() {
 
 setInterval(getCurrentMusic, 30000);
 getCurrentMusic();
+
+
+setInterval(time, 600);
+time();

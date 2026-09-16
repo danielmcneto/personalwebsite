@@ -273,6 +273,25 @@ ul a {
     margin-right: 10%;
 }
 
+#clock{
+    text-align: center;
+    margin-top: 30px;
+    padding: 15px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px 20px;
+    color: rgb(238, 238, 238);
+    justify-content: center;
+    list-style-type: none;
+    margin-left: 20%;
+    margin-right: 20%;
+    text-decoration: none;
+    position: fixed;
+    top: 100px;
+    width: 60%;
+    z-index: 1000;
+}
+
 .footer-links {
     display: flex;
     gap: 12px;
