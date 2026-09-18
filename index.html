@@ -8,6 +8,22 @@
     <link rel="stylesheet" href="style.css" />
     <script type="module" src="script.js" defer></script>
     <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.5.0/model-viewer.min.js"></script>
+    <script type="module">
+  const modelViewer = document.querySelector('model-viewer');
+
+  modelViewer.addEventListener('load', () => {
+    // Pega o material do modelo
+    const material = modelViewer.model.materials[0];
+    
+    // Força o filtro de textura para "Nearest" (sem desfoque pixel-art)
+    if (material && material.pbrMetallicRoughness.baseColorTexture) {
+      material.pbrMetallicRoughness.baseColorTexture.texture.setSampler({
+          magFilter: 'nearest',
+          minFilter: 'nearest',
+        });
+      }
+    });
+</script>
   </head>
   <body>
     <div class="animated-background">
@@ -44,15 +60,21 @@
         </div>
         
         <model-viewer
-          src="src/robotprototype.glb" 
+          src="src/DAN.glb" 
+          texture = ""
           alt="3D Model" 
           loading="lazy"
           camera-controls
           disable-pan
           auto-rotate-delay="0"
-          orientation="0deg 270deg 0deg"
+          orientation="0deg 0deg 0deg"
           rotation-per-second="30deg" 
-          auto-rotate="true">
+          auto-rotate="true"
+
+          environment-image="neutral"
+          shadow-intensity="0"
+          exposure="1"
+          tone-mapping="commerce">
         </model-viewer>
       </section>
     </div>
