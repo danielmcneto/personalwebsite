@@ -74,7 +74,7 @@ async function getCurrentActivity() {
                 let imageId = currentActivity.assets.large_image;
                 let imageUrl = "";
 
-                if (imageId.startsWith("mp:external/")) {
+                if (imageId.startsWith("mp:")) {
                     imageUrl = `https://media.discordapp.net/${imageId.replace("mp:", "")}`;
                 } else {
                     imageUrl = `https://cdn.discordapp.com/app-assets/${currentActivity.application_id}/${imageId}.png`;
