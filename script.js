@@ -52,9 +52,8 @@ async function getCurrentMusic() {
 async function getCurrentActivity() {
     const discord_id = "836178992817504346";
     const textStatus = document.getElementById('activity-text');
-    const imageStatus = document.getElementById('activity-image');
 
-    if (!textStatus || !imageStatus) return;
+    if (!textStatus) return;
 
     try {
         const res = await fetch(`https://api.lanyard.rest/v1/users/${discord_id}`);
@@ -68,27 +67,6 @@ async function getCurrentActivity() {
             const details = currentActivity.details ? ` (${currentActivity.details})` : '';
 
             textStatus.textContent = `Using ${activityName}${details}`;
-
-            if (currentActivity.assets && currentActivity.assets.large_image) {
-                const imageId = currentActivity.assets.large_image;
-                let imageUrl = "";
-
-                // Trata as URLs do Discord/Lanyard
-                if (imageId.startsWith("mp:external/")) {
-                    imageUrl = `https://media.discordapp.net/${imageId.replace("mp:external/", "external/")}`;
-                } else if (imageId.startsWith("mp:attachments/")) {
-                    imageUrl = `https://cdn.discordapp.com/${imageId.replace("mp:", "")}`;
-                } else {
-                    imageUrl = `https://cdn.discordapp.com/app-assets/${currentActivity.application_id}/${imageId}.png`;
-                }
-
-                // Log para você testar no F12
-                console.log("URL da Imagem Gerada:", imageUrl);
-
-                imageStatus.style.backgroundImage = `url("${imageUrl}")`;
-            } else {
-                imageStatus.style.backgroundImage = "none";
-            }
 
             console.log(`Current Activity: ${activityName}`);
         } else {

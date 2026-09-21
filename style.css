@@ -114,50 +114,24 @@ body {
     cursor: pointer;
 }
 
-.activity-container {
-    left: -30px;
-    cursor: pointer;
-    max-width: 110px;
-    height: 110px;
-    transition: max-width 0.5s cubic-bezier(0.4, 0, 0.2, 1), background-color 0.3s ease;
-    position: fixed;
-    bottom: 18%;
-    align-items: center;
-    display: flex;
-    flex-direction: row;
-    background-color: rgba(66, 72, 80, 0.336);
-    border-radius: 9999px;
-}
-
-.activity-container:hover {
-    max-width: 350px;
-    border-radius: 9999px;
-}
-
-.activity-container:hover #activity-text {
-  opacity: 1;
-  margin: 10px;
-}
-
 
 #activity-text {
-  opacity: 0;
-  transition: opacity 0.3s ease 0.1s;
-  color: #fff;
-  font-family: monospace;
-  font-size: 14px;
-}
-
-#activity-image {
-    border-radius: 9999px;
-    width: 100px;
-    height: 100px;
-    position: relative;
-    left: 5px;
-    flex-shrink: 0;
-    background-size: cover;
-    background-repeat: no-repeat;
-    animation: rotate 90s linear infinite;
+    text-align: center;
+    margin-top: 30px;
+    padding: 15px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px 20px;
+    color: rgb(238, 238, 238);
+    justify-content: center;
+    list-style-type: none;
+    margin-left: 47%;
+    margin-right: 20%;
+    text-decoration: none;
+    position: fixed;
+    top: 60px;
+    width: 60%;
+    z-index: 1000;
 }
 
 .spotify-container {
@@ -330,7 +304,7 @@ ul a {
     justify-content: center;
     list-style-type: none;
     margin-left: 20%;
-    margin-right: 20%;
+    margin-right: -30%;
     text-decoration: none;
     position: fixed;
     top: 60px;
