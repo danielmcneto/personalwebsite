@@ -749,17 +749,17 @@ p1 {
 }
 
 #Projects img {
-    object-fit: cover;
     align-self: center;
-    height: 216px;
-    width: 384px;
+    object-fit: cover;
+    height: 160px;
+    width: 400px;
     border-radius: 10px;
 }
 
 #project-table {
     background-color: rgba(66, 72, 80, 0.336);
     backdrop-filter: blur(3px);
-    height: 350px;
+    min-height: 350px;
     width: min(100%, 300px);
     padding: 2%;
     border-radius: 14px;
